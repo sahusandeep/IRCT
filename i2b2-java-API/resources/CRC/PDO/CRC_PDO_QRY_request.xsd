@@ -317,6 +317,7 @@
         <xs:restriction base="xs:string">
             <xs:enumeration value="ANY"/>
             <xs:enumeration value="SAME"/>
+            <xs:enumeration value="SAMEPATIENT"/>
         </xs:restriction>
     </xs:simpleType>
     

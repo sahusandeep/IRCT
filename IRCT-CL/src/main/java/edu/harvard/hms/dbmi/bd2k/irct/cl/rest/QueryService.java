@@ -112,24 +112,27 @@ public class QueryService implements Serializable {
 			} else {
 				r.setQuery(query);
 				response.add("resultId", r.getId());
-				// Add a separate section for query
-				response.add("query",
-						Json.createObjectBuilder()
-						.add("id", query.getId())
-						.add("name", query.getName())
-						.build()
-					);
 				
+				// sandeep: there is exception in following line as query.getId() is NULL
+				// Add a separate section for query
+//				response.add("query",
+//						Json.createObjectBuilder()
+//						.add("id", query.getId())
+//						.add("name", query.getName())
+//						.build()
+//					);
+				
+				// sandeep: NPE as endTime is NULL
 				// Add a separate section for Result
-				response.add("result",
-						Json.createObjectBuilder()
-						.add("id", r.getId())
-						.add("type", r.getJobType())
-						.add("status", r.getResultStatus().toString())
-						.add("startTime", r.getStartTime().toString())
-						.add("endTime", r.getEndTime().toString())
-						.build()
-					);
+//				response.add("result",
+//						Json.createObjectBuilder()
+//						.add("id", r.getId())
+//						.add("type", r.getJobType())
+//						.add("status", r.getResultStatus().toString())
+//						.add("startTime", r.getStartTime().toString())
+//						.add("endTime", r.getEndTime().toString())
+//						.build()
+//					);
 			}
 		} catch (QueryException e) {
 			logger.error("POST /runQuery QueryException:"+e.getMessage());
