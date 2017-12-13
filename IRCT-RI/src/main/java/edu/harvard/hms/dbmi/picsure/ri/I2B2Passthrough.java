@@ -830,7 +830,7 @@ public class I2B2Passthrough
 		PanelType panel = new PanelType();
 		panel.setPanelNumber(panelItem);
 		panel.setInvert(0);
-		panel.setPanelTiming("ANY");
+		panel.setPanelTiming("SAMEPATIENT");
 
 		PanelType.TotalItemOccurrences tio = new PanelType.TotalItemOccurrences();
 		tio.setValue(1);

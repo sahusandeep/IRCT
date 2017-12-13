@@ -451,7 +451,7 @@ public class I2B2XMLResourceImplementation
 		try {
 			crcCell = createCRCCell(projectId, user.getName());
 			MasterInstanceResultResponseType mirrt = crcCell.runQueryInstanceFromQueryDefinition(client, null, null,
-					"IRCT", null, "ANY", 0, roolt, panels.toArray(new PanelType[panels.size()]));
+					"IRCT", null, "SAMEPATIENT", 0, roolt, panels.toArray(new PanelType[panels.size()]));
 
 			String resultId = mirrt.getQueryResultInstance().get(0).getResultInstanceId();
 			String queryId = mirrt.getQueryResultInstance().get(0).getQueryInstanceId();
@@ -832,7 +832,7 @@ public class I2B2XMLResourceImplementation
 		PanelType panel = new PanelType();
 		panel.setPanelNumber(panelItem);
 		panel.setInvert(0);
-		panel.setPanelTiming("ANY");
+		panel.setPanelTiming("SAMEPATIENT");
 
 		PanelType.TotalItemOccurrences tio = new PanelType.TotalItemOccurrences();
 		tio.setValue(1);
